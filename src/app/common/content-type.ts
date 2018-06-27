@@ -1,0 +1,19 @@
+
+export const CONTENT_TYPE = {
+	CONTENT_TYPE_CUSTOMER: 'Customer',
+	CONTENT_TYPE_BENEFICIARY: 'Beneficiary',
+	CONTENT_TYPE_BANK: "Bank",
+	CONTENT_TYPE_TRANSACTION: 'Transaction',
+	CONTENT_TYPE_DROP_DOWN: 'DropDown',
+	CONTENT_TYPE_SEND_TO_BANK: 'SendToBank',
+	CONTENT_TYPE_USER: 'User',
+	CONTENT_TYPE_CURRENCY: 'CurrencyConversion',
+	CONTENT_TYPE_OFAC_ENTITY_HIT: 'OfacEntity',
+	CONTENT_TYPE_NOTE: 'Note',
+	CONTENT_TYPE_SMS_TEMPLATE: 'SmsTemplate',
+	CONTENT_TYPE_FEES_CHARGES: 'FeesAndCharges',
+	CONTENT_TYPE_RPT_REMITTANCE_TRN_SUMMARY: 'RPTRemittanceTrnSummary'
+};
+
+export class ContentType {
+}

@@ -1,0 +1,32 @@
+.page--full_bg__background {
+    background: url('../../assets/images/bg.jpg');
+}
+
+.imagesetDiv {
+	text-align: center;
+	height: 33%;
+	margin-bottom: 15px;
+}
+
+.smartRemitCls{
+	color: #f7f7f7;
+	font-size: 50px ;
+	text-transform: capitalize;
+	height: 40px;
+	margin-bottom: -21px;
+}
+
+.bankNameCls{
+	color: #f7f7f7;
+	text-transform: capitalize; 
+	font-size: 20px ;  
+	font-weight: normal; 
+	padding-top: 35px;
+}
+
+.subDiv {
+	color: white;
+    text-align: center;
+    height: 33%;
+    margin-bottom: 20px 0px 20px 0px;
+}

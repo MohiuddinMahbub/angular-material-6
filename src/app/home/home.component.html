@@ -1,0 +1,40 @@
+
+<ons-page modifier="full_bg">
+	<div class="background"></div>
+		
+	<div class="content">
+		<div class="imagesetDiv">
+			<img src="assets/images/sb_logo.png" alt="SB" style="margin-bottom: 15px;margin-top:35px;width:27%">
+		</div>
+		<!-- <div>
+			<h1 class="smartRemitCls">SmartRemit </h1>
+		</div>
+		<div>
+			<h4 class="bankNameCls" >By- Southeast Financial Services UK Ltd.</h4>
+		</div> -->
+		<div class="subDiv">
+			<h2 class="subDiv">1 GBP = {{sellRate}} BDT</h2>
+		</div>
+		<div layout="row" layout-align="center">
+			<p>
+				<ons-input id="foreign" modifier="underbar" type="number" placeholder="Beneficiary gets"  [(ngModel)] = "foreignAmount" float></ons-input>
+				<ons-select [(ngModel)]="selectedModifier" [attr.modifier]="selectedModifier">
+			  <option *ngFor="let modifier of modifiers" [value]="modifier.value">
+				{{ modifier.label }}
+			  </option>
+			</ons-select>
+			</p>
+			<p>
+				<ons-input id="local" modifier="underbar" type="number" placeholder="You pay" [(ngModel)] = "localAmount" float></ons-input>
+				<ons-select [(ngModel)]="selectedModifier" [attr.modifier]="selectedModifier">
+					<option *ngFor="let modifier of modifiers" [value]="modifier.value">
+				{{ modifier.label }}
+			  </option>
+			</ons-select>
+			</p>
+		</div>
+	</div>
+	<div style="text-align: center; margin: 10px;">
+		<ons-button modifier="large" ripple style="color: pink; position: absolute;bottom:0; left:0;" (click)="onClick()">Get Started</ons-button>
+	</div>
+</ons-page>
