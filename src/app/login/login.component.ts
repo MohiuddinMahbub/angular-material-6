@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 		this.username = this.loginForm.controls.username.value;
 		this.password = this.loginForm.controls.password.value;
 
-		if(this.loginForm.controls.username.value == 'mahbub.hasan@naztech.us.com'
+		if(this.username == 'mahbub.hasan@naztech.us.com'
 		 && this.loginForm.controls.password.value == 'password') {
 		 
 		 	this.logger.log(this.loginForm.controls.username.value + ' ' + this.loginForm.controls.password.value);
