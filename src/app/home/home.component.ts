@@ -9,7 +9,7 @@ import { FormControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 /*Common files*/
 import { Globals } from '../common/globals';
-import { SOURCE, DESTINATION, CCY_CODES, CURRENCY } from '../common/constants';
+import { SOURCE, DESTINATION, CCY_CODES } from '../common/constants';
 import { ACTION_TYPE } from '../common/action-type';
 import { CONTENT_TYPE } from '../common/content-type';
 
@@ -21,11 +21,6 @@ import { FeesNdCharges } from '../model/fees-nd-charges';
 import {ServerService} from '../service/server.service';
 import { LoggerService } from '../service/logger.service';
 
-export interface Food {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
@@ -36,7 +31,6 @@ export class HomeComponent implements OnInit {
 	
 	homeForm: FormGroup;
 	ccy_codes = CCY_CODES;
-	CURRENCY = CURRENCY;
 
 	home: Home; // model home
 	fees: FeesNdCharges; // model FeesNdCharges
@@ -46,12 +40,6 @@ export class HomeComponent implements OnInit {
 
 	foreignAmount: number;
 	localAmount: number;
-
-foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 
 	constructor(
 		private router: Router,
@@ -64,17 +52,13 @@ foods: Food[] = [
 	) 
 	{	
 		/*For testing*/
-		/*this.createForm();*/
+		this.createForm();
 	}
 	
 	ngOnInit() {
 
-		console.log(CURRENCY);
 		//this.getAll();
 		//this.getConversionRate();
-		this.homeForm = this.formBuilder.group({
-			ccy_codes: ['', Validators.required]
-		});
 	}
 
 	getAll(){
@@ -176,7 +160,7 @@ foods: Food[] = [
 	}
 
 	/*For testing*/
-	/*createForm() {
+	createForm() {
 	    this.homeForm = this.formBuilder.group({
 	      name: ['', Validators.required ],
 	      address: this.formBuilder.group({
@@ -188,5 +172,5 @@ foods: Food[] = [
 	      power: '',
 	      sidekick: ''
 	    });
-	  }*/
+	  }
 }
