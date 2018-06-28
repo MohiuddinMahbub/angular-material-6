@@ -18,6 +18,9 @@ export class LoginComponent implements OnInit {
 	submitted: boolean = false;
 	invalidLogin: boolean = false;
 
+	private username: string;
+	private password: string;
+
 	constructor(
 		private formBuilder: FormBuilder,
 		private router: Router,
@@ -25,7 +28,9 @@ export class LoginComponent implements OnInit {
 		) { 
 	}
 
-	onSubmit() {
+	doLogin() {
+
+		console.log('login clicked.');
 
 		this.submitted = true;
 
@@ -33,10 +38,13 @@ export class LoginComponent implements OnInit {
 			return;
 		}
 
-		if(this.loginForm.controls.email.value == 'mahbub.hasan@naztech.us.com'
+		this.username = this.loginForm.controls.username.value;
+		this.password = this.loginForm.controls.password.value;
+
+		if(this.loginForm.controls.username.value == 'mahbub.hasan@naztech.us.com'
 		 && this.loginForm.controls.password.value == 'password') {
 		 
-		 	this.logger.log(this.loginForm.controls.email.value + ' ' + this.loginForm.controls.password.value);
+		 	this.logger.log(this.loginForm.controls.username.value + ' ' + this.loginForm.controls.password.value);
 
 			this.router.navigate(['home']);
 		}else {
@@ -46,7 +54,7 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit() {
 		this.loginForm = this.formBuilder.group({
-			email: ['', Validators.required],
+			username: ['', Validators.required],
 			password: ['', Validators.required]
 		});
 	}

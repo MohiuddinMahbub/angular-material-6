@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 		) {	}
 	
 	ngOnInit() {
-		this.getAll();
+		//this.getAll();
 		//this.getConversionRate();
 	}
 	

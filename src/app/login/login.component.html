@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-6 col-md-offset-2">
 		<h1>Login </h1>
 		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -22,4 +22,66 @@
 			</div>
 		</form>
 	</div>
-</div>
+</div> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><img src="./assets/favicon.ico"></span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="example-spacer"></span>
+
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <md-card>
+  <md-card-title>Connection</md-card-title>
+  <md-card-content>
+    <form [formGroup]="loginForm">
+      <md-input-container [ngClass]="{'error': loginForm.controls['email'].errors && !loginForm.controls['email'].pristine}" dividerColor="{{loginForm.controls['email'].errors && !loginForm.controls['email'].pristine ? 'warn' : 'primary'}}">
+        <input type="email" mdInput formControlName="email" placeholder="Email" required>
+        <div *ngIf="loginForm.controls['email'].errors && !loginForm.controls['email'].pristine" class="error-msg">
+          <div [hidden]="!loginForm.controls['email'].errors.required">Email is required.</div>
+          <div [hidden]="!loginForm.controls['email'].errors.patternInvalid">Email is invalid.</div>
+        </div>
+      </md-input-container>
+      <md-input-container [ngClass]="{'error': loginForm.controls['password'].errors && !loginForm.controls['password'].pristine}"
+        dividerColor="{{loginForm.controls['password'].errors && !loginForm.controls['password'].pristine ? 'warn' : 'primary'}}">
+        <input type="password" mdInput formControlName="password" placeholder="Password" required>
+        <div *ngIf="loginForm.controls['password'].errors && !loginForm.controls['password'].pristine" class="error-msg">
+          <div [hidden]="!loginForm.controls['password'].errors.required">Password is required.</div>
+        </div>
+      </md-input-container>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button class="btn" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+  </md-card-actions>
+</md-card> -->
+ <mat-card class="example-card">
+   <mat-card-header>
+     <mat-card-title>Login</mat-card-title>
+   </mat-card-header>
+   <mat-card-content>
+     <form [formGroup]="loginForm" class="example-form">
+       <table class="example-full-width" cellspacing="0">
+         <tr>
+           <td>
+             <mat-form-field class="example-full-width">
+             <input matInput placeholder="Username" formControlName="username" required>
+             </mat-form-field>
+           </td>
+         </tr>
+         <tr>
+         <td><mat-form-field class="example-full-width">
+           <input matInput placeholder="Password" formControlName="password" required>
+         </mat-form-field></td>
+       </tr></table>
+     </form>
+     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+   </mat-card-content>
+   <mat-card-actions>
+     <button mat-raised-button (click)="doLogin()" color="primary">Login</button>
+   </mat-card-actions>
+ </mat-card>

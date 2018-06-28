@@ -23,9 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/onsenui/css/onsenui.css",
-              "node_modules/onsenui/css/onsen-css-components.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
