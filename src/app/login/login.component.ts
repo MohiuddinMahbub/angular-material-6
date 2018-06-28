@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
 
@@ -41,10 +41,9 @@ export class LoginComponent implements OnInit {
 		this.username = this.loginForm.controls.username.value;
 		this.password = this.loginForm.controls.password.value;
 
-		if(this.username == 'mahbub.hasan@naztech.us.com'
-		 && this.loginForm.controls.password.value == 'password') {
+		if(this.username == 'mahbub.hasan@naztech.us.com' && this.password == 'password') {
 		 
-		 	this.logger.log(this.loginForm.controls.username.value + ' ' + this.loginForm.controls.password.value);
+		 	this.logger.log(this.username + ' ' + this.password);
 
 			this.router.navigate(['home']);
 		}else {

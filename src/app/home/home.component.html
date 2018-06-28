@@ -41,3 +41,51 @@
 	</div>
 </ons-page> -->
 
+<h2>Hero Detail</h2>
+<h3><i>A FormGroup with multiple FormControls</i></h3>
+<form [formGroup]="homeForm">
+<div formGroupName="address" class="well well-lg">
+  <h4>Secret Lair</h4>
+  <div class="form-group">
+    <label class="center-block">Street:
+      <input class="form-control" formControlName="street">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">City:
+      <input class="form-control" formControlName="city"> &nbsp;
+      <select class="form-control" formControlName="ccy_code">
+          <option *ngFor="let ccy_code of ccy_codes" [value]="ccy_code">{{ccy_code}}</option>
+      </select>
+    </label>
+  </div>
+<div class="form-group">
+    <label class="center-block">State:
+      <select class="form-control" formControlName="ccy_code">
+          <option *ngFor="let ccy_code of ccy_codes" [value]="ccy_code">{{ccy_code}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Zip Code:
+      <input class="form-control" formControlName="zip">
+    </label>
+  </div>
+</div>
+
+  <div class="form-group radio">
+    <h4>Super power:</h4>
+    <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label>
+  </div>
+  <div class="checkbox">
+    <label class="center-block">
+      <input type="checkbox" formControlName="sidekick">I have a sidekick.
+    </label>
+  </div>
+</form>
+
+<p>Name value: {{ homeForm.get('name').value }}</p>
+<p>Street value: {{ homeForm.get('address.ccy_code').value}}</p>
+<p>Form value: {{ homeForm.value | json }}</p>

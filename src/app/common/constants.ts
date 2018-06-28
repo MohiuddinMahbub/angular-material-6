@@ -9,6 +9,8 @@ export const COUNTRY = [
 	{ countryId: 100017, countryName: 'Bangladesh' }
 ];
 
+export const CCY_CODES = ['GBP', 'BDT'];
+
 export const CURRENCY = [
 	//TODO::HARD currency id
 	{ ccyId: 100048, ccyKey: 'GBP', ccyName: "United Kingdom, Pounds" }, 

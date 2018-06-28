@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { FormControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 /*Interfaces*/
 /*import { Config } from '../interface/config';*/
 
 /*Common files*/
 import { Globals } from '../common/globals';
-import { SOURCE, DESTINATION } from '../common/constants';
+import { SOURCE, DESTINATION, CCY_CODES } from '../common/constants';
 import { ACTION_TYPE } from '../common/action-type';
 import { CONTENT_TYPE } from '../common/content-type';
 
@@ -29,6 +30,9 @@ import { LoggerService } from '../service/logger.service';
 
 export class HomeComponent implements OnInit {
 	
+	homeForm: FormGroup;
+	ccy_codes = CCY_CODES;
+
 	home: Home; // model home
 	fees: FeesNdCharges; // model FeesNdCharges
 
@@ -48,14 +52,31 @@ export class HomeComponent implements OnInit {
 		private http: HttpClient,
 		private globals: Globals,
 		private logger: LoggerService,
-		private serverService: ServerService
-		) {	}
+		private serverService: ServerService,
+
+		private formBuilder: FormBuilder,
+	) 
+	{	
+		this.createForm();
+	}
 	
 	ngOnInit() {
 		//this.getAll();
 		//this.getConversionRate();
 	}
-	
+	  createForm() {
+	    this.homeForm = this.formBuilder.group({
+	      name: ['', Validators.required ],
+	      address: this.formBuilder.group({
+		      street: '',
+		      city: '',
+		      ccy_code: '',
+		      zip: ''
+		    }),
+	      power: '',
+	      sidekick: ''
+	    });
+	  }
 	getAll(){
 
 		let string1 = {

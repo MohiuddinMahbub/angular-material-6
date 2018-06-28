@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './common/material/material.module';
-import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -26,8 +26,8 @@ import { Globals } from './common/globals';
 		BrowserModule,
 		BrowserAnimationsModule,
 		MaterialModule,
-		ReactiveFormsModule,
 		FormsModule,
+		ReactiveFormsModule,
 		routing,
 		HttpClientModule
 	],
