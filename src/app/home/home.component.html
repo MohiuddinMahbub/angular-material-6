@@ -1,4 +1,37 @@
+ <div class="app-content">
+	<img src="../../assets/images/sb_logo.png" alt="SB" style="margin-bottom: 15px;margin-top:35px;width:27%">
+	<mat-card class="example-card">
+	 <mat-card-header>
+    	<mat-card-title><h1 class="smartRemitCls">SmartRemit </h1></mat-card-title>
+    	<mat-card-subtitle><h4 class="bankNameCls" >By- Southeast Financial Services UK Ltd.</h4></mat-card-subtitle>
+    	<mat-card-subtitle><h2 class="subDiv">1 GBP = {{sellRate}} BDT</h2></mat-card-subtitle>
+	  </mat-card-header>
+	  <mat-card-content>
+	  	<form [formGroup]="homeForm" class="example-form">
+	  		<label>Beneficiary gets</label>
+		  <mat-form-field class="example-full-width">
+		    <input matInput type="number">
+		  </mat-form-field>
 
+		  <mat-form-field>
+  <mat-select placeholder="Favorite food">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+	  		<label>You pay</label>
+			  <mat-form-field class="example-full-width">
+			    <input matInput type="number">
+			  </mat-form-field>
+		</form>
+	  </mat-card-content>
+	  <mat-card-actions>
+	  </mat-card-actions>
+	</mat-card>
+
+</div>
 <!-- <ons-page modifier="full_bg">
 	<div class="background"></div>
 		
@@ -41,7 +74,7 @@
 	</div>
 </ons-page> -->
 
-<h2>Hero Detail</h2>
+<!-- <h2>Hero Detail</h2>
 <h3><i>A FormGroup with multiple FormControls</i></h3>
 <form [formGroup]="homeForm">
 <div formGroupName="address" class="well well-lg">
@@ -88,4 +121,4 @@
 
 <p>Name value: {{ homeForm.get('name').value }}</p>
 <p>Street value: {{ homeForm.get('address.ccy_code').value}}</p>
-<p>Form value: {{ homeForm.value | json }}</p>
+<p>Form value: {{ homeForm.value | json }}</p> -->

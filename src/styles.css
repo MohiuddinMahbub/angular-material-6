@@ -15,7 +15,7 @@
 
 /* Application-wide Styles */
 html, body, app-root, .app-frame {
-    background: url('./assets/images/bg.jpg');
+    background: url('./assets/bg.jpg');
 }
 
 h1 {
