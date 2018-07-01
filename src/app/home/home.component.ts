@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { FormControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { DomSanitizer  } from '@angular/platform-browser';
 /*Interfaces*/
 /*import { Config } from '../interface/config';*/
 
@@ -27,7 +28,7 @@ import { LoggerService } from '../service/logger.service';
 	styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit  {
 	
 	homeForm: FormGroup;
 	ccy_codes = CCY_CODES;
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
 	fees: FeesNdCharges; // model FeesNdCharges
 
 	sellRate: string;
-	selectedModifier: string = '';
+	selectedCcy: string = 'GBP';
 
 	foreignAmount: number;
 	localAmount: number;
@@ -48,17 +49,20 @@ export class HomeComponent implements OnInit {
 		private logger: LoggerService,
 		private serverService: ServerService,
 
-		private formBuilder: FormBuilder,
+		private formBuilder: FormBuilder
 	) 
 	{	
-		/*For testing*/
-		this.createForm();
 	}
 	
 	ngOnInit() {
 
-		//this.getAll();
+		this.getAll();
 		//this.getConversionRate();
+
+		this.homeForm = this.formBuilder.group({
+			foreignAmt: ['', Validators.required ],
+			ccy_code: 'BDT'
+		});
 	}
 
 	getAll(){
@@ -149,28 +153,23 @@ export class HomeComponent implements OnInit {
 		);
 	}
 
+	onChange(value) {
+
+		if (value == 'GBP') {			
+			this.selectedCcy = value;
+		}
+		else{
+			this.selectedCcy = value;
+		}
+	}
+
 	onClick() {
 		
-		this.globals.foreignAmount = this.foreignAmount;
+/*		this.globals.foreignAmount = this.foreignAmount;
 		this.globals.localAmount = this.localAmount;
 
-		this.logger.log(this.globals.foreignAmount);
+		this.logger.log(this.globals.foreignAmount);*/
 
 		this.router.navigate(['login']);
 	}
-
-	/*For testing*/
-	createForm() {
-	    this.homeForm = this.formBuilder.group({
-	      name: ['', Validators.required ],
-	      address: this.formBuilder.group({
-		      street: '',
-		      city: '',
-		      ccy_code: '',
-		      zip: ''
-		    }),
-	      power: '',
-	      sidekick: ''
-	    });
-	  }
 }
