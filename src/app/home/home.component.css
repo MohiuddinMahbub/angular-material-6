@@ -1,3 +1,6 @@
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
 
 .bg {
 	/* The image used */
@@ -35,6 +38,20 @@
 
 .txt-color{
 	color: #f7f7f7;
+}
+
+.home-input-box{
+	background-color: #00293D;
+	color:#FFFEFD;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.data-box{	
+	background-color: #014165;
+	color:#FFFEFD;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .transparent {

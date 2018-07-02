@@ -39,8 +39,7 @@ export class HomeComponent implements OnInit  {
 	sellRate: string;
 	selectedCcy: string = 'GBP';
 
-	foreignAmount: number;
-	localAmount: number;
+	localAmt: number;
 
 	constructor(
 		private router: Router,
@@ -50,20 +49,18 @@ export class HomeComponent implements OnInit  {
 		private serverService: ServerService,
 
 		private formBuilder: FormBuilder
-	) 
-	{	
-	}
+	) {};
 	
 	ngOnInit() {
 
 		this.getAll();
-		//this.getConversionRate();
 
 		this.homeForm = this.formBuilder.group({
 			foreignAmt: ['', Validators.required ],
-			ccy_code: 'BDT'
+			ccy_code: 'BDT',
+			localAmt: ''
 		});
-	}
+	};
 
 	getAll(){
 
@@ -121,7 +118,7 @@ export class HomeComponent implements OnInit  {
 				this.logger.error(error);
 		   }
 		);
-	}
+	};
 
 	getConversionRate() {
 	
@@ -151,25 +148,41 @@ export class HomeComponent implements OnInit  {
 				this.logger.error(error);
 		   }
 		);
-	}
+	};
 
 	onChange(value) {
 
 		if (value == 'GBP') {			
-			this.selectedCcy = value;
+			this.selectedCcy = 'BDT';
 		}
 		else{
-			this.selectedCcy = value;
+			this.selectedCcy = 'GBP';
 		}
-	}
+	};
 
 	onClick() {
 		
-/*		this.globals.foreignAmount = this.foreignAmount;
-		this.globals.localAmount = this.localAmount;
-
-		this.logger.log(this.globals.foreignAmount);*/
+/*		this.logger.log(this.globals.foreignAmount);*/
 
 		this.router.navigate(['login']);
-	}
+	};
+
+	calcForeign(){
+
+	};
+
+	calcLocal(newValue){
+
+		if (this.selectedCcy == 'GBP') {
+			
+			this.localAmt = newValue / parseFloat(this.sellRate);
+
+		} else {			
+			this.localAmt = newValue * parseFloat(this.sellRate);
+		}
+
+		this.homeForm.patchValue({
+		   localAmt: this.localAmt
+		});
+	};
 }
