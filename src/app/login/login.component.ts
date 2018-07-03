@@ -5,11 +5,13 @@ import {first} from "rxjs/operators";
 
 import { LoggerService } from '../service/logger.service';
 import { Globals } from '../common/globals';
+import { routerTransition } from '../router.animations';
 
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.css']
+	styleUrls: ['./login.component.css'],
+    animations: [routerTransition()]
 })
 
 export class LoginComponent implements OnInit {

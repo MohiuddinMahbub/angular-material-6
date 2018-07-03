@@ -52,7 +52,7 @@ export class WelcomeComponent implements OnInit {
 	
 	ngOnInit() {
 
-		this.getAll();
+		//this.getAll();
 
 		this.homeForm = this.formBuilder.group({
 			foreignAmt: ['', Validators.required ],
