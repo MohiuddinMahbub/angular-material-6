@@ -1,0 +1,61 @@
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+.bg {
+	/* The image used */
+	background-image: url("../../../assets/bg_home.jpg");
+
+	/* Full height */
+	height: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.title{
+	color: #f7f7f7;
+	text-align: center;
+	height: 33%;
+	margin-bottom: 15px;
+}
+
+.sub-title{
+	color: #f7f7f7;
+	text-align: center;
+	height: 33%;
+	margin-bottom: 20px 0px 20px 0px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.txt-color{
+	color: #f7f7f7;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.home-input-box{
+	background-color: #00293D;
+	color:#FFFEFD;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.data-box{	
+	background-color: #014165;
+	color:#FFFEFD;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.transparent {
+	background: none;
+}

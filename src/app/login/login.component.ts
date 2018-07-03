@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
 	doLogin() {
 
 		console.log('login clicked.');
+		
+		localStorage.setItem('isLoggedin', 'true');
 
-		this.submitted = true;
+/*		this.submitted = true;
 
 		if (this.loginForm.invalid) {
 			return;
@@ -48,7 +50,7 @@ export class LoginComponent implements OnInit {
 			this.router.navigate(['home']);
 		}else {
 			this.invalidLogin = true;
-		}
+		}*/
 	}
 
 	ngOnInit() {

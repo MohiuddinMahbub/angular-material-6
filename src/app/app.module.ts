@@ -11,15 +11,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
-import {routing} from "./app.routing";
+/*import {routing} from "./app.routing";*/
 import { Globals } from './common/globals';
+import { SidnavComponent } from './sidnav/sidnav.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './shared';
 
 @NgModule({
 	
 	declarations: [
 		AppComponent,
 		LoginComponent,
-		HomeComponent
+		HomeComponent,
+		SidnavComponent
 	],
 
 	imports: [
@@ -28,7 +33,7 @@ import { Globals } from './common/globals';
 		MaterialModule,
 		FormsModule,
 		ReactiveFormsModule,
-		routing,
+		AppRoutingModule,
 		HttpClientModule
 	],
 
@@ -36,7 +41,7 @@ import { Globals } from './common/globals';
 		CUSTOM_ELEMENTS_SCHEMA,
 	],
 
-	providers: [Globals],
+	providers: [Globals, AuthGuard],
 
 	bootstrap: [AppComponent]
 })
