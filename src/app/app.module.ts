@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 /*import {routing} from "./app.routing";*/
 import { Globals } from './common/globals';
 import { SidnavComponent } from './sidnav/sidnav.component';
+import { SidnavModule } from './sidnav/sidnav.module';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './shared';
@@ -28,7 +30,8 @@ import { AuthGuard } from './shared';
 		FormsModule,
 		ReactiveFormsModule,
 		AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		SidnavModule
 	],
 
 	schemas: [

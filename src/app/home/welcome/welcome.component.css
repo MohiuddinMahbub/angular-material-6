@@ -1,18 +1,5 @@
 select.form-control:not([size]):not([multiple]) {
-    height: auto;
-}
-
-.bg {
-	/* The image used */
-	background-image: url("../../../assets/bg_home.jpg");
-
-	/* Full height */
-	height: 100%;
-
-	/* Center and scale the image nicely */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	height: auto;
 }
 
 .title{
@@ -58,4 +45,29 @@ select.form-control:not([size]):not([multiple]) {
 
 .transparent {
 	background: none;
+}
+
+
+$topnav-background-color: #222;
+:host {
+    display: block;
+}
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    /*background: $topnav-background-color;*/
+    /* The image used */
+	background-image: url("../../../assets/bg_home.jpg");
+    /*text-align: center;*/
+    color: #fff;
+    padding: 3em;
+    .user-avatar {
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
 }

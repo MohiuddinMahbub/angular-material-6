@@ -1,5 +1,27 @@
+/*CSS for sidenav*/
+.page {
+  display: flex
+}
+.page__sidebar {
+  width: 300px;
+}
+.page__content {
+  flex: 1
+}
+
+/*End sidenav*/
+
+
+/*CSS for login*/
 .transparent {
   background: none;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 $topnav-background-color: #222;

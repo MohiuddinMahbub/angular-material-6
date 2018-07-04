@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
@@ -6,6 +6,7 @@ import {first} from "rxjs/operators";
 import { LoggerService } from '../service/logger.service';
 import { Globals } from '../common/globals';
 import { routerTransition } from '../router.animations';
+import { MatSidenav } from '../common/material/material.module';
 
 @Component({
 	selector: 'app-login',
@@ -15,7 +16,23 @@ import { routerTransition } from '../router.animations';
 })
 
 export class LoginComponent implements OnInit {
+    @ViewChild('sidenav') sidenav: MatSidenav;
 
+  reason = '';
+
+  close(reason: string) {
+    this.reason = reason;
+    this.sidenav.close();
+  } 
+
+    config = {
+    panels: [
+      { name: 'Section 1', description: 'First section' },
+      { name: 'Section 2', description: 'Second section' },
+      { name: 'Section 3', description: 'Third section' }
+    ]
+  };
+  
 	loginForm: FormGroup;
 	submitted: boolean = false;
 	invalidLogin: boolean = false;

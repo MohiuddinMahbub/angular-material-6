@@ -7,6 +7,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import {MaterialModule} from '../common/material/material.module';
+import { 
+  MatExpansionModule 
+} from '@angular/material';
 
 @NgModule({
     imports: [
@@ -14,7 +17,8 @@ import {MaterialModule} from '../common/material/material.module';
 		LoginRoutingModule,
 		MaterialModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MatExpansionModule
 	],
 
 	schemas: [

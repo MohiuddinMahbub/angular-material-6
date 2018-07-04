@@ -1,45 +1,4 @@
-<!-- <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span><img src="./assets/favicon.ico"></span>
-    <span class="example-fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="example-spacer"></span>
-
-    <button mat-button>About</button>
-    <button mat-button>Contact</button>
-  </mat-toolbar-row>
-</mat-toolbar>
-
- <mat-card class="example-card">
-   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-     <mat-card-title>Login</mat-card-title>
-   </mat-card-header>
-   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-   <mat-card-content>
-     <form [formGroup]="loginForm" class="example-form">
-       <table class="example-full-width" cellspacing="0">
-         <tr>
-           <td>
-             <mat-form-field class="example-full-width">
-             <input matInput placeholder="Username" formControlName="username" required>
-             </mat-form-field>
-           </td>
-         </tr>
-         <tr>
-         <td><mat-form-field class="example-full-width">
-           <input matInput placeholder="Password" formControlName="password" type="password" required>
-         </mat-form-field></td>
-       </tr></table>
-     </form>
-     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-   </mat-card-content>
-   <mat-card-actions>
-     <button mat-raised-button (click)="doLogin()" color="primary">Login</button>
-   </mat-card-actions>
- </mat-card> -->
-
-<div class="login-page" [@routerTransition]>
+<!-- <div class="login-page" [@routerTransition]>
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
@@ -54,10 +13,28 @@
                         <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/welcome']" (click)="doLogin()"> Log in </a><!-- 
-                &nbsp;
-                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
+                <a class="btn rounded-btn" [routerLink]="['/welcome']" (click)="doLogin()"> Log in </a>
             </form>
         </div>
     </div>
+</div> -->
+
+<div class="page">
+  <div class="page__sidebar">
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let panel of config.panels">
+  
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ panel.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ panel.description }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Panel content goes here</p>
+  </mat-expansion-panel>
+</mat-accordion>
+  </div>
+  <div class="page__content"></div>
 </div>
