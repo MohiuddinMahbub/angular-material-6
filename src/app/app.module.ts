@@ -8,10 +8,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-/*import {routing} from "./app.routing";*/
 import { Globals } from './common/globals';
-import { SidnavComponent } from './sidnav/sidnav.component';
-import { SidnavModule } from './sidnav/sidnav.module';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +17,7 @@ import { AuthGuard } from './shared';
 @NgModule({
 	
 	declarations: [
-		AppComponent,
-		SidnavComponent
+		AppComponent
 	],
 
 	imports: [
@@ -30,8 +26,7 @@ import { AuthGuard } from './shared';
 		FormsModule,
 		ReactiveFormsModule,
 		AppRoutingModule,
-		HttpClientModule,
-		SidnavModule
+		HttpClientModule
 	],
 
 	schemas: [

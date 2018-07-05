@@ -4,8 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { FormControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { DomSanitizer  } from '@angular/platform-browser';
-/*Interfaces*/
-/*import { Config } from '../interface/config';*/
 
 /*Common files*/
 import { Globals } from '../../common/globals';

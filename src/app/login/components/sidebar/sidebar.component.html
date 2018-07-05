@@ -1,0 +1,9 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <div class="list-group">
+        <a routerLink="/welcome" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <img src="assets/images/svg/home.svg" width="20px" class="user-avatar" />&nbsp;{{ 'Home'  }}
+        </a>
+        <a routerLink="/about" [routerLinkActive]="['router-link-active']" class="list-group-item">&nbsp;{{ 'Info'  }}
+        </a>
+    </div>
+</nav>

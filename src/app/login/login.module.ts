@@ -6,10 +6,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import {MaterialModule} from '../common/material/material.module';
-import { 
-  MatExpansionModule 
-} from '@angular/material';
+import { MaterialModule } from '../common/material/material.module';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+
 
 @NgModule({
     imports: [
@@ -17,14 +17,13 @@ import {
 		LoginRoutingModule,
 		MaterialModule,
 		FormsModule,
-		ReactiveFormsModule,
-		MatExpansionModule
+		ReactiveFormsModule
 	],
 
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 
-    declarations: [LoginComponent]
+    declarations: [LoginComponent, HeaderComponent, SidebarComponent]
 })
 export class LoginModule {}

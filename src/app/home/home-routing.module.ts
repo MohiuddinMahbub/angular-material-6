@@ -12,7 +12,7 @@ const routes: Routes = [
         		path: '', redirectTo: 'welcome', pathMatch: 'prefix'
         	},
         	{
-				path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'
+				    path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule'
         	}
         ]
     }

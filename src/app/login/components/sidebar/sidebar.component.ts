@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-    selector: 'app-sidebar',
+    selector: 'app-sidebar-initial',
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
