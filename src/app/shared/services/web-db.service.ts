@@ -9,40 +9,53 @@ import { CONTENT_TYPE } from '../../common/content-type';
 import {ServerService} from '../../service/server.service';
 import { DexieService } from './dexie.service';
 
+import Dexie from 'dexie';
+
+import {TBank} from '../../model/t-bank';
+
 @Injectable({
   providedIn: 'root'
 })
 export class WebDbService {
 
-  constructor(
+	table: any;
+
+  	constructor(
 		private globals: Globals,
 		private serverService: ServerService,
-		private dexieService: DexieService) { }
+		private dexieService: DexieService) {
+	}
 
-	getRecipientsServer(){
-		let jsonString = {
-			header: {
-				userId: 100000,
-				userName: null,
-				source: SOURCE,
-				actionType: ACTION_TYPE.ACTION_TYPE_SELECT_BEN_TXN_SUMMARY,
-				contentType: CONTENT_TYPE.CONTENT_TYPE_TRANSACTION,
-				destination: DESTINATION,
-				secretId: this.globals.guid()
-			},
-			payload: {
-				customerId: 1181
-			}
-		}
+  	addAll(db, tableName, data){
 		
-		this.serverService.dispatcher(jsonString).subscribe(
-		   data => {
-				
-				console.log(data.payload[1].payload);
-		   }/*,
-		   error => {
-				this.logger.error(error);
-		   }*/
-		);
-  }
+		//console.log(data);
+
+		this.checkIDB();
+
+		if(tableName == 'T_BANK'){
+			this.table = this.dexieService.T_BANK;
+		}
+
+  		this.table.bulkPut(data)
+  		.then(
+  			function(lastKey){
+  				console.log("Last data added: {}", lastKey);
+  			}
+  		)
+  		.catch(Dexie.BulkError, 
+  			function(e){
+  				console.error("Some data failed to add: {}", data - e.failures.length + " data was added successfully.");
+  			}
+  		);
+  	};
+
+  	checkIDB(){
+	  	/*// In the following line, you should include the prefixes of implementations you want to test.
+		window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+		// DON'T use "var indexedDB = ..." if you're not in a function.
+		// Moreover, you may need references to some window.IDB* objects:
+		window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction || {READ_WRITE: "readwrite"}; // This line should only be needed if it is needed to support the object's constants for older browsers
+		window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+		// (Mozilla has never prefixed these objects, so we don't need window.mozIDB*)*/
+  	}
 }
